@@ -1,4 +1,5 @@
 from decimal import Decimal, getcontext
+from sympy import symbols
 import heapq
 
 def factorial(num):
@@ -21,15 +22,24 @@ def fibonacci(n):
     return fib_sequence[n]
 
 def power(base, exponent):
+    if exponent == 0:
+        return 1
+    
     if exponent < 0:
-        raise ValueError("Negative exponents are not supported")
+        base = 1 / base
+        exponent = -exponent
+    
     result = 1
     while exponent > 0:
         if exponent % 2 == 1:
             result *= base
         base *= base
         exponent //= 2
-    return result
+    
+    if isinstance(result, int):
+        return result
+    else:
+        return "{:.10f}".format(result)
 
 def sum_of_numbers(n):
     if n < 1:
