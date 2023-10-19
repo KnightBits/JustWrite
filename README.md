@@ -183,5 +183,95 @@ visited_nodes = graph.bfs(start)
 shortest_distance = graph.shortest_path_dijkstra(start, end)
 ```
 
+## Functions for Working with Lists and Arrays:
+
+### 1. `is_sorted_descending(A)`
+Checks if the list `A` is sorted in descending order.
+```python
+A = [5, 4, 3, 2, 1]
+result = is_sorted_descending(A)
+print("Is the list sorted in descending order?", result)  # Output: True
+```
+
+### 2. `is_sorted(A)`
+Checks if the list `A` is sorted in ascending order.
+```python
+A = [1, 2, 3, 4, 5]
+result = is_sorted(A)
+print("Is the list sorted in ascending order?", result)  # Output: True
+```
+
+### 3. `has_duplicates(nums)`
+Checks for the presence of duplicates in the list `nums`.
+```python
+nums = [1, 2, 3, 2, 4, 5]
+result = has_duplicates(nums)
+print("Does the list have duplicates?", result)  # Output: True
+```
+
+### 4. `has_duplicate_values(lst)`
+Finds duplicates in the list using bitwise operations.
+```python
+lst = [1, 2, 3, 2, 4, 5]
+result = has_duplicate_values(lst)
+print("Does the list have duplicates?", result)  # Output: True
+```
+
+## Functions for Mathematical Calculations:
+
+### 5. `calculate_ln2(precision)`
+Calculates the natural logarithm of 2 (ln(2)) with the specified precision.
+```python
+precision = 10
+ln2_value = calculate_ln2(precision)
+print("Value of ln(2):", ln2_value)  # Output: Approximately 0.6931471806
+```
+
+### 6. `calculate_pi(precision)`
+Calculates the value of Pi (π) with the specified precision.
+```python
+precision = 10
+pi_value = calculate_pi(precision)
+print("Value of Pi:", pi_value)  # Output: Approximately 3.1415926535
+```
+
+### 7. `calculate_e_with_precision(precision)`
+Calculates the value of the mathematical constant e (Euler's number) with the specified precision.
+```python
+precision = 10
+e_value = calculate_e_with_precision(precision)
+print("Value of e:", e_value)  # Output: Approximately 2.7182818284
+```
+
+### 8. `golden_ratio(precision)`
+Calculates the value of the golden ratio (phi) with the specified precision.
+```python
+precision = 10
+phi_value = golden_ratio(precision)
+print("Value of the golden ratio (phi):", phi_value)  # Output: Approximately 1.6180339887
+```
+
+## Functions for Working with Matrices:
+
+### 9. `seidel_constant(A, tol=1e-6, max_iterations=1000)`
+Calculates the Seidel constant for matrix `A` with the specified parameters.
+```python
+import numpy as np
+A = np.array([[4.0, 1.0, 2.0], [3.0, 5.0, 1.0], [1.0, 2.0, 6.0]]
+seidel_result = seidel_constant(A)
+print("Seidel constant:", seidel_result)
+```
+
+## Functions for Calculating File Hashes:
+
+### 10. `calculate_file_hash(file_path, hash_algorithm="sha256")`
+Calculates the hash value of a file using the specified hash algorithm.
+```python
+file_path = "example_file.txt"
+hash_algorithm = "sha256"
+hash_value = calculate_file_hash(file_path, hash_algorithm)
+print(f"{hash_algorithm} hash value of the file:", hash_value)
+```
+
 ## Author
 [KnightBits](https://github.com/KnightBits)
