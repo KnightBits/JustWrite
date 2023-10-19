@@ -2,6 +2,7 @@ from decimal import Decimal, getcontext
 from sympy import symbols
 import heapq
 import hashlib
+import numpy as np
 
 def factorial(num):
     if num < 0:
@@ -349,3 +350,83 @@ def calculate_file_hash(file_path, hash_algorithm="sha256"):
         return hash_obj.hexdigest()
     except Exception as e:
         return str(e)
+
+# поиск дубликатов в списке с помощью битовых операций
+
+def has_duplicate_values(lst):
+    seen = 0
+
+    for item in lst:
+        item_mask = 1 << item
+        if (seen & item_mask) != 0:
+            return True
+        seen |= item_mask
+
+    return False
+
+# вычисление числа натурального логарифма 2 (ln(2))
+
+def calculate_ln2(precision):
+    getcontext().prec = precision + 2
+    ln2 = Decimal(0)
+    for n in range(1, precision * 2):
+        ln2 += 1 / n * ((-1) ** (n - 1))
+    return str(ln2)[:-1]
+
+# рассчеты числа пи
+def calculate_pi(precision):
+    getcontext().prec = precision + 2
+    pi = Decimal(4) * (4 * Decimal(math.atan(1/5)) - Decimal(math.atan(1/239)))
+    return str(pi)[:-1]
+
+# золотое сечение
+
+def calculate_golden_ratio():
+    phi = (1 + math.sqrt(5)) / 2
+    return phi
+
+# экспонента е
+
+def calculate_e_with_precision(precision):
+    getcontext().prec = precision + 2
+    e = Decimal(1)
+    factorial = Decimal(1)
+    for i in range(1, precision * 2):
+        factorial *= i
+        e += 1 / factorial
+    return str(e)[:-1]
+
+# число фи
+
+def golden_ratio(precision):
+    getcontext().prec = precision + 2
+    phi = (1 + Decimal(5).sqrt()) / 2
+    return str(phi)[:-1]
+
+# константа Зейделя
+
+def seidel_constant(A, tol=1e-6, max_iterations=1000):
+    n = len(A)
+    x = np.zeros(n)
+    
+    L = np.tril(A, k=-1)
+    U = np.triu(A, k=1)
+    
+    for i in range(max_iterations):
+        x_new = np.zeros(n)
+        for j in range(n):
+            x_new[j] = (A[j, -1] - np.dot(U[j], x) - np.dot(L[j], x_new)) / A[j, j]
+        
+        error_norm = np.linalg.norm(x_new - x, np.inf) / (np.linalg.norm(x_new, np.inf) + 1e-20)
+        
+        x = x_new
+        
+        if error_norm < tol:
+            eigenvalues_L = np.linalg.eigvals(L)
+            eigenvalues_U = np.linalg.eigvals(U)
+            max_eigenvalue_L = np.max(np.real(eigenvalues_L))
+            max_eigenvalue_U = np.max(np.real(eigenvalues_U))
+            
+            return 1 / (1 - max_eigenvalue_L / max_eigenvalue_U)
+    
+    raise Exception("Seidel constant did not converge within the specified number of iterations.")
