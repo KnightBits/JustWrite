@@ -185,4 +185,3 @@ shortest_distance = graph.shortest_path_dijkstra(start, end)
 
 ## Author
 [KnightBits](https://github.com/KnightBits)
-```
