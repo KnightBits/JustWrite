@@ -1,6 +1,7 @@
 from decimal import Decimal, getcontext
 from sympy import symbols
 import heapq
+import hashlib
 
 def factorial(num):
     if num < 0:
@@ -299,3 +300,52 @@ class Graph:
         start_vertex = list(self.vertices.keys())[0]
         visited = self.dfs(start_vertex)
         return len(visited) == len(self.vertices)
+
+# проверка, отсортирован ли список по убыванию (True \ False)
+
+def is_sorted_descending(A):
+    n = len(A)
+    for i in range(n - 1):
+        if A[i] < A[i + 1]:
+            return False
+    return True
+
+# проверка, отсортирован ли список по возрастанию (True \ False)
+
+def is_sorted(A):
+    n = len(A)
+    for i in range(n - 1):
+        if A[i] > A[i + 1]:
+            return False
+    return True
+
+# проверка на наличие дубликатов в списке
+
+def has_duplicates(nums):
+    seen = 0
+
+    for num in nums:
+        if (seen & (1 << num)) > 0:
+            return True
+        seen |= 1 << num
+
+    return False
+
+# хэш-сумма файла
+
+def calculate_file_hash(file_path, hash_algorithm="sha256"):
+    try:
+        if hash_algorithm not in hashlib.algorithms_guaranteed:
+            raise ValueError("Invalid hash algorithm")
+        hash_obj = hashlib.new(hash_algorithm)
+
+        with open(file_path, "rb") as file:
+            while True:
+                chunk = file.read(8192)
+                if not chunk:
+                    break
+                hash_obj.update(chunk)
+
+        return hash_obj.hexdigest()
+    except Exception as e:
+        return str(e)
