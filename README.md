@@ -11,7 +11,54 @@ To use this library, you need to include the necessary Python files in your proj
 from math_data_structures import *
 ```
 
-## Mathematical Functions
+# Mathematical Functions and Trigonometric Operations
+
+This module provides various mathematical functions and trigonometric operations for performing calculations in Python. It includes functions for logarithmic operations, tetration, derivative and integral calculations, as well as trigonometric functions and their inverse counterparts.
+
+## Logarithmic Functions
+
+### `log(x, base)`
+Calculates the logarithm of a number `x` with a specified base. Both `x` and `base` must be positive, and `base` must not be equal to 1. It raises a `ValueError` if the conditions are not met.
+
+### `tetration(base, n)`
+Computes the result of tetration, where `base` is raised to the power of itself `n` times. The function returns the final result.
+
+## Calculus Operations
+
+### `derivative(expression)`
+Calculates the derivative of a mathematical expression with respect to the variable `x`. It uses the `diff` function from the SymPy library to perform the differentiation.
+
+### `integral(expression)`
+Computes the integral of a mathematical expression with respect to the variable `x`. It uses the `integrate` function from the SymPy library to perform the integration.
+
+## Trigonometric Functions
+
+### `sin(x)`
+Calculates the sine of an angle in radians using the `math.sin` function.
+
+### `cos(x)`
+Calculates the cosine of an angle in radians using the `math.cos` function.
+
+### `tan(x)`
+Calculates the tangent of an angle in radians using the `math.tan` function.
+
+### `cot(x)`
+Calculates the cotangent of an angle in radians, which is the reciprocal of the tangent. It uses the formula `1 / math.tan(x)`.
+
+### `sec(x)`
+Calculates the secant of an angle in radians, which is the reciprocal of the cosine. It uses the formula `1 / math.cos(x)`.
+
+### `csc(x)`
+Calculates the cosecant of an angle in radians, which is the reciprocal of the sine. It uses the formula `1 / math.sin(x)`.
+
+### Inverse Trigonometric Functions
+
+The module also includes inverse trigonometric functions for arcsine, arccosine, arctangent, arccotangent, arcsecant, and arccosecant. These functions use the corresponding functions from the `math` library to calculate the inverse trigonometric values. They raise `ValueError` if the input is outside the valid range.
+
+## Prime Number Generation
+
+### `sieve_of_eratosthenes(limit)`
+Generates prime numbers up to a specified limit using the Sieve of Eratosthenes algorithm. It returns a list of prime numbers within the given limit. If the limit is less than 2, it returns an empty list.
 
 ### Factorial
 
