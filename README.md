@@ -1,292 +1,108 @@
-```markdown
-# Python Math and Data Structures Library
+# Math and Data Structures Library
 
-This Python library contains a collection of mathematical functions and data structures for various purposes. These functions and classes are designed to be helpful for performing mathematical operations and working with fundamental data structures.
+Welcome to the Math and Data Structures Library – your go-to resource for mathematical functions and essential data structures, designed to enhance your Python projects. This versatile library covers a wide range of mathematical operations and provides fundamental data structures for your computational needs.
 
-## Getting Started
+## Overview
 
-To use this library, you need to include the necessary Python files in your project or script. You can simply copy and paste the functions and classes from this library into your own Python script or import them using the `import` statement.
+- **Mathematical Functions and Trigonometric Operations:** Explore a variety of mathematical functions and trigonometric operations for precise calculations.
 
-```python
-from math_data_structures import *
-```
+  - `log(x, base)`: Calculate logarithms with a specified base.
+  - `tetration(base, n)`: Perform tetration for powerful exponentiation.
 
-# Mathematical Functions and Trigonometric Operations
+- **Prime Number Generation:** Utilize efficient algorithms for generating prime numbers up to a specified limit.
 
-This module provides various mathematical functions and trigonometric operations for performing calculations in Python. It includes functions for logarithmic operations, tetration, derivative and integral calculations, as well as trigonometric functions and their inverse counterparts.
+  - `sieve_of_eratosthenes(limit)`: Apply the Sieve of Eratosthenes for prime number generation.
 
-## Logarithmic Functions
+- **Factorial, Fibonacci, and More:** Access essential mathematical operations and series.
 
-### `log(x, base)`
-Calculates the logarithm of a number `x` with a specified base. Both `x` and `base` must be positive, and `base` must not be equal to 1. It raises a `ValueError` if the conditions are not met.
+  - `factorial(num)`: Calculate the factorial of a non-negative integer.
+  - `fibonacci(n)`: Discover the nth Fibonacci number.
+  - `power(base, exponent)`: Compute the result of exponentiation.
+  - `sum_of_numbers(n)`: Calculate the sum of numbers up to n.
+  - `gcd(a, b)`: Find the greatest common divisor.
+  - `binomial(n, k)`: Compute binomial coefficients.
+  - `mathPi(num)`: Approximate the value of π (pi).
+  - `square_root(number)`: Calculate the square root.
 
-### `tetration(base, n)`
-Computes the result of tetration, where `base` is raised to the power of itself `n` times. The function returns the final result.
+- **Matrix Operations:** Perform matrix operations with ease.
 
-## Prime Number Generation
+  - `matrix_multiply(matrix1, matrix2)`: Multiply two matrices.
+  - `matrix_determinant(matrix)`: Calculate the determinant of a square matrix.
+  - `matrix_inverse(matrix)`: Find the inverse of a square matrix.
 
-### `sieve_of_eratosthenes(limit)`
-Generates prime numbers up to a specified limit using the Sieve of Eratosthenes algorithm. It returns a list of prime numbers within the given limit. If the limit is less than 2, it returns an empty list.
+- **Calculus Operations:** Dive into calculus with derivative and integral calculations.
 
-### Factorial
+  - `compute_derivative(expression)`: Calculate the derivative of a mathematical expression.
+  - `compute_integral(expression)`: Compute the integral of a mathematical expression.
 
-```python
-factorial(num)
-```
+- **Trigonometric Functions:** Harness trigonometric functions for angle calculations.
 
-Calculates the factorial of a non-negative integer.
-
-### Fibonacci
-
-```python
-fibonacci(n)
-```
-
-Calculates the nth Fibonacci number.
-
-### Power
-
-```python
-power(base, exponent)
-```
-
-Computes the result of raising a base to a non-negative integer exponent.
-
-### Sum of Numbers
-
-```python
-sum_of_numbers(n)
-```
-
-Calculates the sum of numbers from 1 to n.
-
-### Greatest Common Divisor (GCD)
-
-```python
-gcd(a, b)
-```
-
-Finds the greatest common divisor of two non-negative integers.
-
-### Binomial Coefficient
-
-```python
-binomial(n, k)
-```
-
-Computes the binomial coefficient "n choose k."
-
-### Approximate Value of Pi
-
-```python
-mathPi(num)
-```
-
-Calculates an approximate value of π (pi) with a specified number of decimal places.
-
-### Square Root
-
-```python
-square_root(number)
-```
-
-Calculates the square root of a non-negative number.
-
-### Matrix Operations
-
-#### Matrix Multiplication
-
-```python
-matrix_multiply(matrix1, matrix2)
-```
-
-Multiplies two matrices if their dimensions are compatible.
-
-#### Matrix Determinant
-
-```python
-matrix_determinant(matrix)
-```
-
-Calculates the determinant of a square matrix.
-
-#### Matrix Inverse
-
-```python
-matrix_inverse(matrix)
-```
-
-Finds the inverse of a square matrix.
-
-### Calculus Operations
-
-#### Compute Derivative
-
-```python
-compute_derivative(expression)
-```
-
-Computes the derivative of a mathematical expression with respect to the variable x.
-
-#### Compute Integral
-
-```python
-compute_integral(expression)
-```
-
-Computes the integral of a mathematical expression with respect to the variable x.
-
-### Trigonometric Functions
-
-```python
-sine(angle_in_radians)
-cosine(angle_in_radians)
-tangent(angle_in_radians)
-```
-
-Calculates the sine, cosine, and tangent of an angle in radians.
-
-## Prime Number Generation
-
-### Sieve of Eratosthenes
-
-```python
-sieve_of_eratosthenes(limit)
-```
-
-Generates prime numbers up to a specified limit using the Sieve of Eratosthenes algorithm.
+  - `sine(angle_in_radians)`, `cosine(angle_in_radians)`, `tangent(angle_in_radians)`: Calculate trigonometric functions.
 
 ## Data Structures
 
-### Binary Tree
+- **Binary Tree:** Employ a simple binary tree for basic tree operations.
 
-A simple binary tree data structure is provided for basic tree operations.
+  ```python
+  # Create a binary tree
+  tree = BinaryTree()
 
-```python
-# Create a binary tree
-tree = BinaryTree()
+  # Insert a key into the tree
+  tree.insert(key)
 
-# Insert a key into the tree
-tree.insert(key)
+  # Search for a key in the tree
+  node = tree.search(key)
+  ```
 
-# Search for a key in the tree
-node = tree.search(key)
-```
+- **Graph:** Use a graph data structure for creating, modifying, and traversing graphs.
 
-### Graph
+  ```python
+  # Create an undirected graph
+  graph = Graph()
 
-A graph data structure is provided for creating, modifying, and traversing graphs.
+  # Add vertices to the graph
+  graph.add_vertex(vertex)
 
-```python
-# Create an undirected graph
-graph = Graph()
+  # Add edges to the graph
+  graph.add_edge(start, end, weight)
 
-# Add vertices to the graph
-graph.add_vertex(vertex)
+  # Check if the graph is connected
+  connected = graph.is_connected()
 
-# Add edges to the graph
-graph.add_edge(start, end, weight)
+  # Perform graph traversal (DFS and BFS)
+  visited_nodes_dfs = graph.dfs(start)
+  visited_nodes_bfs = graph.bfs(start)
 
-# Check if the graph is connected
-connected = graph.is_connected()
+  # Find the shortest path using Dijkstra's algorithm
+  shortest_distance = graph.shortest_path_dijkstra(start, end)
+  ```
 
-# Perform graph traversal (DFS and BFS)
-visited_nodes = graph.dfs(start)
-visited_nodes = graph.bfs(start)
+## Functions for Lists, Arrays, and More
 
-# Find the shortest path using Dijkstra's algorithm
-shortest_distance = graph.shortest_path_dijkstra(start, end)
-```
+- **Sorting and Duplicates:** Check sorting order and find duplicates in lists.
 
-## Functions for Working with Lists and Arrays:
+  - `is_sorted_descending(A)`: Check if a list is sorted in descending order.
+  - `is_sorted(A)`: Check if a list is sorted in ascending order.
+  - `has_duplicates(nums)`: Check for duplicates in a list.
+  - `has_duplicate_values(lst)`: Find duplicates in a list using bitwise operations.
 
-### 1. `is_sorted_descending(A)`
-Checks if the list `A` is sorted in descending order.
-```python
-A = [5, 4, 3, 2, 1]
-result = is_sorted_descending(A)
-print("Is the list sorted in descending order?", result)  # Output: True
-```
+## Mathematical Calculations
 
-### 2. `is_sorted(A)`
-Checks if the list `A` is sorted in ascending order.
-```python
-A = [1, 2, 3, 4, 5]
-result = is_sorted(A)
-print("Is the list sorted in ascending order?", result)  # Output: True
-```
+- **Constant Values:** Calculate fundamental mathematical constants with precision.
 
-### 3. `has_duplicates(nums)`
-Checks for the presence of duplicates in the list `nums`.
-```python
-nums = [1, 2, 3, 2, 4, 5]
-result = has_duplicates(nums)
-print("Does the list have duplicates?", result)  # Output: True
-```
+  - `calculate_ln2(precision)`: Natural logarithm of 2 (ln(2)).
+  - `calculate_pi(precision)`: Value of Pi (π).
+  - `calculate_e_with_precision(precision)`: Euler's number (e).
+  - `golden_ratio(precision)`: Golden ratio (phi).
 
-### 4. `has_duplicate_values(lst)`
-Finds duplicates in the list using bitwise operations.
-```python
-lst = [1, 2, 3, 2, 4, 5]
-result = has_duplicate_values(lst)
-print("Does the list have duplicates?", result)  # Output: True
-```
+## File Hash Calculations
 
-## Functions for Mathematical Calculations:
+- **Hash Algorithms:** Calculate file hashes using various hash algorithms.
 
-### 5. `calculate_ln2(precision)`
-Calculates the natural logarithm of 2 (ln(2)) with the specified precision.
-```python
-precision = 10
-ln2_value = calculate_ln2(precision)
-print("Value of ln(2):", ln2_value)  # Output: Approximately 0.6931471806
-```
-
-### 6. `calculate_pi(precision)`
-Calculates the value of Pi (π) with the specified precision.
-```python
-precision = 10
-pi_value = calculate_pi(precision)
-print("Value of Pi:", pi_value)  # Output: Approximately 3.1415926535
-```
-
-### 7. `calculate_e_with_precision(precision)`
-Calculates the value of the mathematical constant e (Euler's number) with the specified precision.
-```python
-precision = 10
-e_value = calculate_e_with_precision(precision)
-print("Value of e:", e_value)  # Output: Approximately 2.7182818284
-```
-
-### 8. `golden_ratio(precision)`
-Calculates the value of the golden ratio (phi) with the specified precision.
-```python
-precision = 10
-phi_value = golden_ratio(precision)
-print("Value of the golden ratio (phi):", phi_value)  # Output: Approximately 1.6180339887
-```
-
-## Functions for Working with Matrices:
-
-### 9. `seidel_constant(A, tol=1e-6, max_iterations=1000)`
-Calculates the Seidel constant for matrix `A` with the specified parameters.
-```python
-import numpy as np
-A = np.array([[4.0, 1.0, 2.0], [3.0, 5.0, 1.0], [1.0, 2.0, 6.0]]
-seidel_result = seidel_constant(A)
-print("Seidel constant:", seidel_result)
-```
-
-## Functions for Calculating File Hashes:
-
-### 10. `calculate_file_hash(file_path, hash_algorithm="sha256")`
-Calculates the hash value of a file using the specified hash algorithm.
-```python
-file_path = "example_file.txt"
-hash_algorithm = "sha256"
-hash_value = calculate_file_hash(file_path, hash_algorithm)
-print(f"{hash_algorithm} hash value of the file:", hash_value)
-```
+  - `calculate_file_hash(file_path, hash_algorithm="sha256")`: Calculate file hash using a specified hash algorithm.
 
 ## Author
+
 [KnightBits](https://github.com/KnightBits)
+
+Dive into the power of mathematics and efficient data structures – your journey begins with the Math and Data Structures Library!
