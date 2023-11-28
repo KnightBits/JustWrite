@@ -14,16 +14,21 @@ typedef struct BinaryTree {
 } BinaryTree;
 
 TreeNode* createTreeNode(int key) {
-    TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
+    TreeNode* node = calloc(1, sizeof(TreeNode));
+    if (!node) {
+        fprintf(stderr, "Memory allocation failed");
+        exit(EXIT_FAILURE);
+    }
     node->key = key;
-    node->left = NULL;
-    node->right = NULL;
     return node;
 }
 
 BinaryTree* createBinaryTree() {
-    BinaryTree* tree = (BinaryTree*)malloc(sizeof(BinaryTree));
-    tree->root = NULL;
+    BinaryTree* tree = calloc(1, sizeof(BinaryTree));
+    if (!tree) {
+        fprintf(stderr, "Memory allocation failed");
+        exit(EXIT_FAILURE);
+    }
     return tree;
 }
 
@@ -44,9 +49,9 @@ void insertKey(BinaryTree* tree, int key) {
     tree->root = insert(tree->root, key);
 }
 
-TreeNode* search(TreeNode* node, int key) {
+TreeNode* search(const TreeNode* node, int key) {
     if (node == NULL || node->key == key) {
-        return node;
+        return (TreeNode*)node;
     }
     if (key < node->key) {
         return search(node->left, key);
@@ -54,7 +59,7 @@ TreeNode* search(TreeNode* node, int key) {
     return search(node->right, key);
 }
 
-TreeNode* searchKey(BinaryTree* tree, int key) {
+TreeNode* searchKey(const BinaryTree* tree, int key) {
     return search(tree->root, key);
 }
 
