@@ -8,7 +8,7 @@ const np = require('numjs');
 const mp = require('mpmath');
 
 // Define factorial function
-function factorial(num) {
+export function factorial(num) {
     if (num < 0) {
         throw new Error("Factorial is not defined for negative numbers");
     }
@@ -20,7 +20,7 @@ function factorial(num) {
 }
 
 // Define fibonacci function
-function fibonacci(n) {
+export function fibonacci(n) {
     if (n < 0) {
         throw new Error("Fibonacci number is not defined for negative indices");
     }
@@ -36,7 +36,7 @@ function fibonacci(n) {
 }
 
 // Define power function
-function power(base, exponent) {
+export function power(base, exponent) {
     if (exponent === 0) {
         return 1;
     }
@@ -60,7 +60,7 @@ function power(base, exponent) {
 }
 
 // Define sum_of_numbers function
-function sum_of_numbers(n) {
+export function sum_of_numbers(n) {
     if (n < 1) {
         throw new Error("N must be positive");
     }
@@ -72,7 +72,7 @@ function sum_of_numbers(n) {
 }
 
 // Define gcd function
-function gcd(a, b) {
+export function gcd(a, b) {
     while (b) {
         [a, b] = [b, a % b];
     }
@@ -80,7 +80,7 @@ function gcd(a, b) {
 }
 
 // Define binomial function
-function binomial(n, k) {
+export function binomial(n, k) {
     if (k < 0 || k > n) {
         return 0;
     }
@@ -92,7 +92,7 @@ function binomial(n, k) {
 }
 
 // Define calculate_pi function
-function calculate_pi(num_digits) {
+export function calculate_pi(num_digits) {
     Decimal.set({ precision: num_digits + 2 });
     const one_239 = new Decimal(1).div(239);
     let pi = new Decimal(0);
@@ -106,7 +106,7 @@ function calculate_pi(num_digits) {
 }
 
 // Define mathPi function
-function mathPi(num) {
+export function mathPi(num) {
     const num_digits = parseInt(num);
     if (num_digits < 0) {
         throw new Error("The number of characters must be a non-negative number");
@@ -116,7 +116,7 @@ function mathPi(num) {
 }
 
 // Define square_root function
-function square_root(number) {
+export function square_root(number) {
     if (number < 0) {
         throw new Error("The square root of a negative number is undefined");
     }
@@ -124,7 +124,7 @@ function square_root(number) {
 }
 
 // Define matrix_multiply function
-function matrix_multiply(matrix1, matrix2) {
+export function matrix_multiply(matrix1, matrix2) {
     if (matrix1[0].length !== matrix2.length) {
         throw new Error("Matrix size mismatch");
     }
@@ -142,7 +142,7 @@ function matrix_multiply(matrix1, matrix2) {
 }
 
 // Define matrix_determinant function
-function matrix_determinant(matrix) {
+export function matrix_determinant(matrix) {
     if (matrix.length !== matrix[0].length) {
         throw new Error("The matrix must be square");
     }
@@ -162,7 +162,7 @@ function matrix_determinant(matrix) {
 }
 
 // Define matrix_inverse function
-function matrix_inverse(matrix) {
+export function matrix_inverse(matrix) {
     if (matrix.length !== matrix[0].length) {
         throw new Error("The matrix must be square");
     }
@@ -198,67 +198,67 @@ function matrix_inverse(matrix) {
 }
 
 // Define derivative function
-function derivative(expression) {
+export function derivative(expression) {
     return expression.diff(x);
 }
 
 // Define integral function
-function integral(expression) {
+export function integral(expression) {
     return integrate(expression, x);
 }
 
 // Define sin function
-function sin(x) {
+export function sin(x) {
     return Math.sin(x);
 }
 
 // Define cos function
-function cos(x) {
+export function cos(x) {
     return Math.cos(x);
 }
 
 // Define tan function
-function tan(x) {
+export function tan(x) {
     return Math.tan(x);
 }
 
 // Define cotg function
-function cotg(x) {
+export function cotg(x) {
     return 1 / Math.tan(x);
 }
 
 // Define sec function
-function sec(x) {
+export function sec(x) {
     return 1 / Math.cos(x);
 }
 
 // Define csc function
-function csc(x) {
+export function csc(x) {
     return 1 / Math.sin(x);
 }
 
 // Define asin function
-function asin(x) {
+export function asin(x) {
     return Math.asin(x);
 }
 
 // Define arcos function
-function arcos(x) {
+export function arcos(x) {
     return Math.acos(x);
 }
 
 // Define artan function
-function artan(x) {
+export function artan(x) {
     return Math.atan(x);
 }
 
 // Define arcotg function
-function arcotg(x) {
+export function arcotg(x) {
     return Math.atan(1 / x);
 }
 
 // Define arsec function
-function arsec(x) {
+export function arsec(x) {
     if (x >= 1 || x <= -1) {
         return Math.acos(1 / x);
     } else {
@@ -267,7 +267,7 @@ function arsec(x) {
 }
 
 // Define arcsc function
-function arcsc(x) {
+export function arcsc(x) {
     if (x >= 1 || x <= -1) {
         return Math.asin(1 / x);
     } else {
@@ -276,27 +276,27 @@ function arcsc(x) {
 }
 
 // Define sinh function
-function sinh(x) {
+export function sinh(x) {
     return Math.sinh(x);
 }
 
 // Define cosh function
-function cosh(x) {
+export function cosh(x) {
     return Math.cosh(x);
 }
 
 // Define tanh function
-function tanh(x) {
+export function tanh(x) {
     return Math.tanh(x);
 }
 
 // Define asinh function
-function asinh(x) {
+export function asinh(x) {
     return Math.asinh(x);
 }
 
 // Define acosh function
-function acosh(x) {
+export function acosh(x) {
     if (x < 1) {
         throw new Error("Input to acosh must be >= 1");
     }
@@ -304,7 +304,7 @@ function acosh(x) {
 }
 
 // Define atanh function
-function atanh(x) {
+export function atanh(x) {
     if (Math.abs(x) >= 1) {
         throw new Error("Input to atanh must be < 1 in absolute value");
     }
@@ -312,22 +312,22 @@ function atanh(x) {
 }
 
 // Define sec function
-function sec(x) {
+export function sec(x) {
     return 1 / Math.cos(x);
 }
 
 // Define csc function
-function csc(x) {
+export function csc(x) {
     return 1 / Math.sin(x);
 }
 
 // Define cot function
-function cot(x) {
+export function cot(x) {
     return 1 / Math.tan(x);
 }
 
 // Define asec function
-function asec(x) {
+export function asec(x) {
     if (x >= 1 || x <= -1) {
         return Math.acos(1 / x);
     } else {
@@ -336,7 +336,7 @@ function asec(x) {
 }
 
 // Define acsc function
-function acsc(x) {
+export function acsc(x) {
     if (x >= 1 || x <= -1) {
         return Math.asin(1 / x);
     } else {
@@ -345,12 +345,12 @@ function acsc(x) {
 }
 
 // Define acot function
-function acot(x) {
+export function acot(x) {
     return Math.atan(1 / x);
 }
 
 // Define mean function
-function mean(numbers) {
+export function mean(numbers) {
     if (numbers.length === 0) {
         throw new Error("List of numbers is empty");
     }
@@ -358,7 +358,7 @@ function mean(numbers) {
 }
 
 // Define median function
-function median(numbers) {
+export function median(numbers) {
     if (numbers.length === 0) {
         throw new Error("List of numbers is empty");
     }
@@ -375,7 +375,7 @@ function median(numbers) {
 }
 
 // Define variance function
-function variance(numbers) {
+export function variance(numbers) {
     if (numbers.length === 0) {
         throw new Error("List of numbers is empty");
     }
@@ -386,12 +386,12 @@ function variance(numbers) {
 }
 
 // Define std_deviation function
-function std_deviation(numbers) {
+export function std_deviation(numbers) {
     return Math.sqrt(variance(numbers));
 }
 
 // Define sieve_of_eratosthenes function
-function sieve_of_eratosthenes(limit) {
+export function sieve_of_eratosthenes(limit) {
     if (limit < 2) {
         return [];
     }
@@ -601,7 +601,7 @@ class PriorityQueue {
     }
 }
 
-function is_sorted_descending(A) {
+export function is_sorted_descending(A) {
     const n = A.length;
     for (let i = 0; i < n - 1; i++) {
         if (A[i] < A[i + 1]) {
@@ -611,7 +611,7 @@ function is_sorted_descending(A) {
     return true;
 }
 
-function is_sorted(A) {
+export function is_sorted(A) {
     const n = A.length;
     for (let i = 0; i < n - 1; i++) {
         if (A[i] > A[i + 1]) {
@@ -621,7 +621,7 @@ function is_sorted(A) {
     return true;
 }
 
-function has_duplicates(nums) {
+export function has_duplicates(nums) {
     let seen = 0;
     for (let num of nums) {
         if ((seen & (1 << num)) > 0) {
@@ -632,7 +632,7 @@ function has_duplicates(nums) {
     return false;
 }
 
-function file_hash(file_path, hash_algorithm = "sha256") {
+export function file_hash(file_path, hash_algorithm = "sha256") {
     if (!hashlib.getHashes().includes(hash_algorithm)) {
         throw new Error("Invalid hash algorithm");
     }
@@ -643,7 +643,7 @@ function file_hash(file_path, hash_algorithm = "sha256") {
     return hash_obj.digest('hex');
 }
 
-function has_duplicate_values(lst) {
+export function has_duplicate_values(lst) {
     let seen = 0;
     for (let item of lst) {
         const item_mask = 1 << item;
@@ -655,7 +655,7 @@ function has_duplicate_values(lst) {
     return false;
 }
 
-function calculate_ln2(precision) {
+export function calculate_ln2(precision) {
     mp.mp.dps = precision + 2;
     let ln2 = mp.mpf(0);
     for (let n = 1; n <= precision * 2; n++) {
@@ -664,13 +664,13 @@ function calculate_ln2(precision) {
     return ln2.toFixed(precision);
 }
 
-function calculate_pi(precision) {
+export function calculate_pi(precision) {
     mp.mp.dps = precision + 2;
     let pi = mp.mpf(4).times(mp.atan(mp.mpf(1).div(5))).minus(mp.atan(mp.mpf(1).div(239))).times(4);
     return pi.toFixed(precision);
 }
 
-function calculate_e_with_precision(precision) {
+export function calculate_e_with_precision(precision) {
     mp.mp.dps = precision + 2;
     let e = mp.mpf(1);
     let factorial = mp.mpf(1);
@@ -681,13 +681,13 @@ function calculate_e_with_precision(precision) {
     return e.toFixed(precision);
 }
 
-function golden_ratio(precision) {
+export function golden_ratio(precision) {
     mp.mp.dps = precision + 2;
     const phi = mp.mpf(1).plus(mp.sqrt(5)).div(2);
     return phi.toFixed(precision);
 }
 
-function seidel_constant(A, tol = 1e-6, max_iterations = 1000) {
+export function seidel_constant(A, tol = 1e-6, max_iterations = 1000) {
     const n = A.length;
     const x = new Array(n).fill(0);
     const L = np.tril(A, -1);
@@ -710,7 +710,7 @@ function seidel_constant(A, tol = 1e-6, max_iterations = 1000) {
     throw new Error("Seidel constant did not converge within the specified number of iterations.");
 }
 
-function log(x, base) {
+export function log(x, base) {
     if (x <= 0 || base <= 0 || base === 1) {
         throw new Error("The number and base must be positive, and the base must not be 1.");
     }
@@ -722,7 +722,7 @@ function log(x, base) {
     return result;
 }
 
-function tetration(base, n) {
+export function tetration(base, n) {
     let result = 1;
     while (n > 0) {
         result = base ** result;
